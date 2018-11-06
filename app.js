@@ -14,8 +14,8 @@ mongoose.connect("mongodb://localhost:27017/subject-savant", {useNewUrlParser: t
     .catch((err) => console.error(err));
 
 var userSchema = new mongoose.Schema({
-    username: {type: String, unique: true },
-    password: String,
+    username: {type: String, unique: true, required: true },
+    password: {type: String, required: true },
 
     //TODO set default to false and implement some method of making users a moderator
     isModerator: { type: Boolean, default: true }
@@ -23,14 +23,13 @@ var userSchema = new mongoose.Schema({
 var User = mongoose.model("User", userSchema);
 
 var postSchema = new mongoose.Schema({
-    course_id: String,
-    post_id: String,
+    course_id: {type: String, required: true},
     author: [userSchema],
-    post_section: String, 
-    content: String,
+    post_section: {type: String, required: true}, 
+    content: {type: String, required: true},
     up_votes: {type: Number, default: 0 },
     down_votes: {type: Number, default: 0 },
-    date: Date
+    local_time: {type: Date, default: new Date()}
 });
 
 var Post = mongoose.model("Post", postSchema);
