@@ -1,5 +1,6 @@
 moderator functions
 users can change their vote on a post/unvote
+set default to false and implement some method of making users a moderator
 
 generate post id
 generate date (maybe time too)
