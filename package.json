@@ -1,7 +1,7 @@
 {
-  "name": "demo",
+  "name": "subject-savant",
   "version": "1.0.0",
-  "description": "Node demo showing how to store data in a MongoDB database",
+  "description": "review and rate classes",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,10 +10,11 @@
     "node",
     "mongodb",
     "mongoose",
-    "demo"
+    "demo",
+    "express",
+    "RESTAPI"
   ],
-  "author": "Grant Zhao",
-  "license": "ISC",
+  "author": "Team Eight",
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
