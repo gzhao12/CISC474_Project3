@@ -1,0 +1,9 @@
+moderator functions
+users can change their vote on a post/unvote
+
+generate post id
+generate date (maybe time too)
+retrieve all posts of a certain class...
+    and of a certain section, based on highest net vote score
+
+posts can't be upvoted and downvoted by the same user
