@@ -1,11 +1,13 @@
+User stuff:
 moderator functions
-users can change their vote on a post/unvote
 set default to false and implement some method of making users a moderator
 
 
-retrieve all posts of a certain class...
-    and of a certain section, based on highest net vote score
-posts can't be upvoted and downvoted by the same user
+Course stuff:
+maybe(?) retrieve a certain section and based on highest net vote score
 
+
+User & Course stuff:
 link user that's logged in to post author
-
+posts can't be upvoted and downvoted by the same user
+users can change their vote on a post/unvote
