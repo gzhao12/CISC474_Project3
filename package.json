@@ -1,14 +1,25 @@
 {
-  "name": "angular",
-  "version": "0.0.0",
+  "name": "subject-savant",
+  "description": "review and rate classes",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "node",
+    "mongodb",
+    "mongoose",
+    "demo",
+    "express",
+    "RESTAPI"
+  ],
+  "author": "Team Eight",
   "private": true,
   "dependencies": {
     "@angular/animations": "~7.0.0",
@@ -22,7 +33,10 @@
     "@angular/router": "~7.0.0",
     "core-js": "^2.5.4",
     "rxjs": "~6.3.3",
-    "zone.js": "~0.8.26"
+    "zone.js": "~0.8.26",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.3.9"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.10.0",
