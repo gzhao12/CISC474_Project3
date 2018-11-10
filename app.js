@@ -4,10 +4,12 @@ var mongoose = require("mongoose");
 var bodyParser = require('body-parser');
 var postAPI = require('./functions/post');
 var userAPI = require('./functions/user');
+var cors = require('cors');
 
 var app = express();
 var port = 3000;
 
+app.use(cors({credentials: true, origin: true}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -25,6 +27,7 @@ mongoose.connect("mongodb://localhost:27017/subject-savant", {useNewUrlParser: t
 app.get("/", (req, res) => {
     res.sendFile(__dirname + "/index.html");
 });
+
 
 app.listen(port, () => {
     console.log("Server listening on port " + port);
