@@ -15,6 +15,16 @@ router.post("/addpost", (req, res) => {
         });
 });
 
+
+router.put('/:id', (req,res) => {
+Post.findByIdAndUpdate(req.params.id, req.body, {new:true}, function (err,post){
+if (err) return next(err);
+res.json(post); });
+});
+
+
+
+
 //TODO return only posts for a certain course and post section
 router.get('/allposts', (req, res) => {
     Post.find((err, Posts) => {
