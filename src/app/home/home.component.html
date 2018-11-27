@@ -1,0 +1,24 @@
+<div class="jumbotron">
+  <h1 class="display-4 text-center">Welcome to Courseasaurus!</h1>
+  <p class="lead text-center">This is a simple site to browse through current course offerings <br>at the University of
+    Delaware and see what students are saying about them!</p>
+  <hr class="my-4">
+  <img class="marginauto" src="../../assets/images/earth-globe-svgrepo-com.svg" height="425px" width="425px" alt="centered image" />
+
+  <!--Autocomplete start-->
+
+  <form class="example-form  pt-4 marginauto">
+      <mat-form-field class="example-full-width text-center">
+        <input matInput placeholder="Search for a course..." aria-label="Course" [matAutocomplete]="auto" [formControl]="courseCtrl">
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option (onSelectionChange)="onEnter($event, course.name)" (click)="onEnter()" *ngFor="let course of filteredCourses | async" [value]="course.name">
+            <img style="vertical-align:middle;" aria-hidden src="{{course.image}}" height="25" />
+            <span>   {{course.name}}</span> |
+            <small>{{course.desc}}</small>
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </form>
+
+<!--Autocomplete end-->
+</div>

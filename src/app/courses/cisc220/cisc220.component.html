@@ -1,0 +1,67 @@
+<div class="jumbotron">
+    <div class="container">
+        <div class = "text-right">
+            <img src="https://sdtimes.com/wp-content/uploads/2018/03/cpppp-490x490.png"
+            height="50px" width="50px">
+          </div>
+      <h1 class="display-3 text-left">{{CourseNumber}}
+      </h1>
+      <hr class="my-3">
+      <h2 class="display-6 text-left">{{CourseName}}</h2>
+      <h1 class="display-4 text-left pt-5">Course Description</h1>
+      <p>
+          <button type="button" class="btn btn-outline-primary btn-sm" (click)="isCollapsed = !isCollapsed"
+            [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+            More Info +
+          </button>
+        </p>
+        <div id="collapseExample" [ngbCollapse]="!isCollapsed">
+          <div class="card">
+            <div class="card-body">
+              {{CourseDesc}}
+            </div>
+          </div>
+        </div>
+      <br>
+      <div class="wrapper">
+  
+        <ng-container *ngFor="let results of restItems; let i=index">
+          <div *ngIf="results.course_id == 220">
+          <div class="card card-1">
+            <div class="author">{{results.author}}</div>
+            <div class="content-text">{{results.content}}</div>
+            <div class="votes">
+              <span>
+                <input (click)="updateUpvotes(results)" [(ngModel)]="post.up_votes" type="image" src="../../../assets/images/uparrow.png"
+                  height="20px" width="20px">{{results.up_votes}}
+                <input (click)="updateDownvotes(results)" [(ngModel)]="post.down_votes " type="image" src="../../../assets/images/downarrow.png"
+                  height="20px" width="20px">{{results.down_votes}}
+              </span>
+            </div>
+          </div>
+        </div>
+        </ng-container>
+      </div>
+  
+      <form class="ngForm text-center">
+        <div class="field pb-1">
+          <input type="text" [(ngModel)]="post.author" name="author" class="input" placeholder="Your Name" required>
+        </div>
+  
+        <div class="field pb-1">
+          <input type="text" [(ngModel)]="post.post_section" name="post_section" class="input" placeholder="Section"
+            required>
+        </div>
+  
+        <div class="field">
+          <textarea rows="6" cols="40" [(ngModel)]="post.content" class="textarea" name="message" placeholder="Add your own description!"
+            required>
+        </textarea>
+        </div>
+        <button (click)="addPost(post)" type="submit" class="button">Submit</button>
+  
+      </form>
+      <h1 class="display-4 text-left pt-5">Tips</h1>
+      <h1 class="display-4 text-left pt-5">Professors</h1>
+    </div>
+  </div>
