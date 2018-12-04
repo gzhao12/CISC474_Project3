@@ -75,6 +75,7 @@ export class CISC106Component implements OnInit {
     });
     window.location.reload();
   }
+  
   // Read all REST Items
   getRestItems(): void {
     this.restItemsServiceGetRestItems()
