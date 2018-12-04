@@ -74,6 +74,53 @@
     
 
     <h1 class="display-4 text-left pt-5">Tips</h1>
+    <div class="wrapper">
+
+      <ng-container *ngFor="let results of restItems; let i=index">
+        <div *ngIf="results.course_id == 106 && results.post_section == 'tips'">
+          <div class="card card-1">
+            <div class="author">{{results.author}}</div>
+            <div class="content-text">{{results.content}}</div>
+            <div class="votes">
+              <span>
+                <input (click)="updateUpvotes(results)" [(ngModel)]="post.up_votes" type="image" src="../../../assets/images/uparrow.png"
+                  height="20px" width="20px">{{results.up_votes}}
+                <input (click)="updateDownvotes(results)" [(ngModel)]="post.down_votes " type="image" src="../../../assets/images/downarrow.png"
+                  height="20px" width="20px">{{results.down_votes}}
+              </span>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Add a comment!
+          </mat-panel-title>
+          <mat-panel-description>
+            
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+    
+        <mat-form-field>
+          <input matInput [(ngModel)]="post.author" name="author" placeholder="First name">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <textarea matInput [(ngModel)]="post.content" name="message" placeholder="Description"></textarea>
+        </mat-form-field>
+        <br>
+        <button (click)="addPostTips(post)" type="submit" class="button">Submit</button>
+      </mat-expansion-panel>
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                           (closed)="panelOpenState = false">
+       
+      </mat-expansion-panel>
+    </mat-accordion>
+
     <h1 class="display-4 text-left pt-5">Professors</h1>
   </div>
 </div>

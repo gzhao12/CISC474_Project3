@@ -29,7 +29,7 @@ export class CISC474Component implements OnInit {
   counter = 0;
   isCollapsed = false;
 
-  post = new Post('', '', 474, null, 0, 0);
+  post = new Post('', '', 474, '', 0, 0);
 
   constructor(private http: HttpClient, private router: Router, private dialog: MatDialog) { }
 
@@ -70,7 +70,17 @@ export class CISC474Component implements OnInit {
 
   // Post a Description
 
-  addPost (post) {
+  addPostDesc (post) {
+    post.post_section = 'course_desc';
+    this.restItemsPost = 'http://localhost:3000/addpost';
+    this.http.post(this.restItemsPost, post).subscribe((data) => {
+      console.log('POST Success');
+    });
+    window.location.reload();
+  }
+
+  addPostTips (post) {
+    post.post_section = 'tips';
     this.restItemsPost = 'http://localhost:3000/addpost';
     this.http.post(this.restItemsPost, post).subscribe((data) => {
       console.log('POST Success');

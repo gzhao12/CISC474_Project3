@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Post } from '../post';
 import { Router } from '@angular/router';
+import { CardFancyComponent } from '../../card-fancy/card-fancy.component';
 
 
 
@@ -68,14 +69,14 @@ export class CISC106Component implements OnInit {
   }
 
   addPostTips (post) {
-
+    post.post_section = 'tips';
     this.restItemsPost = 'http://localhost:3000/addpost';
     this.http.post(this.restItemsPost, post).subscribe((data) => {
       console.log('POST Success');
     });
     window.location.reload();
   }
-  
+
   // Read all REST Items
   getRestItems(): void {
     this.restItemsServiceGetRestItems()

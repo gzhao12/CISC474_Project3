@@ -21,6 +21,10 @@ import { CISC108Component } from './courses/cisc108/cisc108.component';
 import { CISC181Component } from './courses/cisc181/cisc181.component';
 import { CISC220Component } from './courses/cisc220/cisc220.component';
 import { DialogComponent } from './dialog-window/dialog/dialog.component';
+import { CardFancyComponent } from './card-fancy/card-fancy.component';
+import {MatNativeDateModule} from '@angular/material';
+import { MatCardModule } from '@angular/material/card';
+
 
 
 
@@ -39,10 +43,13 @@ import { DialogComponent } from './dialog-window/dialog/dialog.component';
     CISC181Component,
     CISC220Component,
     DialogComponent,
+    CardFancyComponent,
 
   ],
   imports: [
+    MatCardModule,
     MatDialogModule,
+    MatNativeDateModule,
     MatExpansionModule,
     MatInputModule,
     ReactiveFormsModule,

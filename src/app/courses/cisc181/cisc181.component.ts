@@ -25,7 +25,7 @@ export class CISC181Component implements OnInit {
   restItemsPost: string;
   counter = 0;
 
-  post = new Post('', '', 181, null, 0, 0);
+  post = new Post('', '', 181, '', 0, 0);
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -59,7 +59,17 @@ export class CISC181Component implements OnInit {
 
   // Post a Description
 
-  addPost (post) {
+  addPostDesc (post) {
+    post.post_section = 'course_desc';
+    this.restItemsPost = 'http://localhost:3000/addpost';
+    this.http.post(this.restItemsPost, post).subscribe((data) => {
+      console.log('POST Success');
+    });
+    window.location.reload();
+  }
+
+  addPostTips (post) {
+    post.post_section = 'tips';
     this.restItemsPost = 'http://localhost:3000/addpost';
     this.http.post(this.restItemsPost, post).subscribe((data) => {
       console.log('POST Success');
