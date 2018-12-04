@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Post } from '../post';
 import { Router } from '@angular/router';
+import { DialogComponent } from '../../dialog-window/dialog/dialog.component';
+import { MatDialog, MatDialogConfig } from '@angular/material';
 
 
 
@@ -13,7 +15,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./cisc474.component.scss']
 })
 export class CISC474Component implements OnInit {
-
+  panelOpenState = false;
   CourseNumber = 'CISC 474';
   CourseName = 'Advanced Web Technologies';
   CourseDesc = 'Programming and architecture of web servers and the technologies for implementing high performance \
@@ -29,7 +31,7 @@ export class CISC474Component implements OnInit {
 
   post = new Post('', '', 474, null, 0, 0);
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router, private dialog: MatDialog) { }
 
   ngOnInit() {
     this.getRestItems();
@@ -47,9 +49,16 @@ export class CISC474Component implements OnInit {
 
   }
 
-  loadMore() {
+  openDialog() {
 
-  }
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+
+    this.dialog.open(DialogComponent, dialogConfig);
+}
+
 
   updatePost (result) {
     this.restItemsPost = 'http://localhost:3000/' + result._id;

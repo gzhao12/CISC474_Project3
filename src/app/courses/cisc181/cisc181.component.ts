@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./cisc181.component.scss']
 })
 export class CISC181Component implements OnInit {
-
+  panelOpenState = false;
   CourseNumber = 'CISC 181';
   CourseName = 'Introduction to Computer Science II';
   CourseDesc = 'Principles of computer science illustrated and applied through \

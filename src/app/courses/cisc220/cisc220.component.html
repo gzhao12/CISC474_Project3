@@ -43,24 +43,36 @@
         </ng-container>
       </div>
   
-      <form class="ngForm text-center">
-        <div class="field pb-1">
-          <input type="text" [(ngModel)]="post.author" name="author" class="input" placeholder="Your Name" required>
-        </div>
-  
-        <div class="field pb-1">
-          <input type="text" [(ngModel)]="post.post_section" name="post_section" class="input" placeholder="Section"
-            required>
-        </div>
-  
-        <div class="field">
-          <textarea rows="6" cols="40" [(ngModel)]="post.content" class="textarea" name="message" placeholder="Add your own description!"
-            required>
-        </textarea>
-        </div>
-        <button (click)="addPost(post)" type="submit" class="button">Submit</button>
-  
-      </form>
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Add a comment!
+            </mat-panel-title>
+            <mat-panel-description>
+              
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+      
+          <mat-form-field>
+            <input matInput [(ngModel)]="post.author" name="author" placeholder="First name">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput  [(ngModel)]="post.post_section" name="post_section" placeholder="Section">
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <textarea matInput [(ngModel)]="post.content" name="message" placeholder="Description"></textarea>
+          </mat-form-field>
+          <br>
+          <button (click)="addPost(post)" type="submit" class="button">Submit</button>
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+         
+        </mat-expansion-panel>
+      </mat-accordion>
+      
       <h1 class="display-4 text-left pt-5">Tips</h1>
       <h1 class="display-4 text-left pt-5">Professors</h1>
     </div>

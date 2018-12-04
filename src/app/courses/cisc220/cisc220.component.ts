@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./cisc220.component.scss']
 })
 export class CISC220Component implements OnInit {
-
+  panelOpenState = false;
   CourseNumber = 'CISC 220';
   CourseName = 'Data Structures';
   CourseDesc = 'Review of data type abstraction, recursion, arrays, stacks, queues, \

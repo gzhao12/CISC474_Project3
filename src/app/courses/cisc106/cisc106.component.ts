@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./cisc106.component.scss']
 })
 export class CISC106Component implements OnInit {
-
+  panelOpenState = false;
   CourseNumber = 'CISC 106';
   CourseName = 'General Computer Science for Engineers ';
   CourseDesc = 'Principles of computer science illustrated and applied \
@@ -24,7 +24,7 @@ export class CISC106Component implements OnInit {
   restItemsPost: string;
   counter = 0;
 
-  post = new Post('', '', 106, null, 0, 0);
+  post = new Post('', '', 106, '', 0, 0);
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -58,7 +58,17 @@ export class CISC106Component implements OnInit {
 
   // Post a Description
 
-  addPost (post) {
+  addPostDesc (post) {
+    post.post_section = 'course_desc';
+    this.restItemsPost = 'http://localhost:3000/addpost';
+    this.http.post(this.restItemsPost, post).subscribe((data) => {
+      console.log('POST Success');
+    });
+    window.location.reload();
+  }
+
+  addPostTips (post) {
+
     this.restItemsPost = 'http://localhost:3000/addpost';
     this.http.post(this.restItemsPost, post).subscribe((data) => {
       console.log('POST Success');

@@ -3,7 +3,7 @@ export class Post {
         public author: string,
         public content: string,
         public course_id: Number,
-        public post_section: Number,
+        public post_section: string,
         public up_votes: Number,
         public down_votes: Number
     ) {}
