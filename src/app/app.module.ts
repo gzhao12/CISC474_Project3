@@ -20,6 +20,7 @@ import { CISC106Component } from './courses/cisc106/cisc106.component';
 import { CISC108Component } from './courses/cisc108/cisc108.component';
 import { CISC181Component } from './courses/cisc181/cisc181.component';
 import { CISC220Component } from './courses/cisc220/cisc220.component';
+import { AuthService } from './auth/auth-service'
 import { CallBackComponentComponent } from './call-back-component/call-back-component.component';
 
 
@@ -56,7 +57,7 @@ import { CallBackComponentComponent } from './call-back-component/call-back-comp
     MDBBootstrapModule.forRoot(),
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

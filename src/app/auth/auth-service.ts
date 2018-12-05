@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
+//import { AUTH_CONFIG } from './auth0-variables';
 import { Router } from '@angular/router';
-import { filter } from 'rxjs/operators';
 import * as auth0 from 'auth0-js';
 
 (window as any).global = window;
@@ -12,31 +12,32 @@ export class AuthService {
     clientID: 'aHCL23CBAKQRNjV77pSxyF07PYBMcuIT',
     domain: 'jonjon007.auth0.com',
     responseType: 'token id_token',
-    redirectUri: 'http://localhost:3000/callback',
+    redirectUri: 'http://localhost:4200/callback',
     scope: 'openid'
   });
 
   constructor(public router: Router) {}
 
   public login(): void {
+    
     this.auth0.authorize();
   }
 
   public handleAuthentication(): void {
     this.auth0.parseHash((err, authResult) => {
       if (authResult && authResult.accessToken && authResult.idToken) {
-        window.location.hash = '';
         this.setSession(authResult);
         this.router.navigate(['/home']);
       } else if (err) {
         this.router.navigate(['/home']);
         console.log(err);
+        alert(`Error: ${err.error}. Check the console for further details.`);
       }
     });
   }
 
   private setSession(authResult): void {
-    // Set the time that the Access Token will expire at
+    // Set the time that the access token will expire at
     const expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
     localStorage.setItem('access_token', authResult.accessToken);
     localStorage.setItem('id_token', authResult.idToken);
@@ -54,9 +55,9 @@ export class AuthService {
 
   public isAuthenticated(): boolean {
     // Check whether the current time is past the
-    // Access Token's expiry time
+    // access token's expiry time
     const expiresAt = JSON.parse(localStorage.getItem('expires_at') || '{}');
     return new Date().getTime() < expiresAt;
   }
-}
 
+}
