@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './call-back-component.component.html',
   styleUrls: ['./call-back-component.component.scss']
 })
-export class CallBackComponentComponent implements OnInit {
+export class CallBackComponent implements OnInit {
 
   constructor() { }
 

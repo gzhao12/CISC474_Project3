@@ -21,7 +21,7 @@ import { CISC108Component } from './courses/cisc108/cisc108.component';
 import { CISC181Component } from './courses/cisc181/cisc181.component';
 import { CISC220Component } from './courses/cisc220/cisc220.component';
 import { AuthService } from './auth/auth-service'
-import { CallBackComponentComponent } from './call-back-component/call-back-component.component';
+import { CallBackComponent } from './call-back/call-back-component';
 
 
 
@@ -39,7 +39,7 @@ import { CallBackComponentComponent } from './call-back-component/call-back-comp
     CISC108Component,
     CISC181Component,
     CISC220Component,
-    CallBackComponentComponent,
+    CallBackComponent,
 
   ],
   imports: [
