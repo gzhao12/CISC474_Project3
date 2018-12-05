@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 import { ErrorComponent } from './error/error.component';
 import { CISC106Component } from './courses/cisc106/cisc106.component';
 import { CISC108Component } from './courses/cisc108/cisc108.component';
@@ -11,6 +13,8 @@ import { CISC474Component } from './courses/cisc474/cisc474.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'about', component: AboutComponent},
+  { path: 'contact', component: ContactComponent}, 
   { path: 'courses/cisc106', component: CISC106Component},
   { path: 'courses/cisc108', component: CISC108Component},
   { path: 'courses/cisc181', component: CISC181Component},

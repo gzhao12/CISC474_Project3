@@ -25,6 +25,8 @@ import { CardFancyComponent } from './card-fancy/card-fancy.component';
 import {MatNativeDateModule} from '@angular/material';
 import { MatCardModule } from '@angular/material/card';
 
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 
 
 
@@ -44,6 +46,8 @@ import { MatCardModule } from '@angular/material/card';
     CISC220Component,
     DialogComponent,
     CardFancyComponent,
+    AboutComponent,
+    ContactComponent,
 
   ],
   imports: [
