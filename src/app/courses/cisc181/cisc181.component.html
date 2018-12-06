@@ -45,8 +45,8 @@
         </div>
         </ng-container>
       </div>
-  
-      <form class="ngForm text-center">
+      <!--Logged In-->
+      <form class="ngForm text-center" *ngIf="auth.isAuthenticated()">
         <div class="field pb-1">
           <input type="text" [(ngModel)]="post.author" name="author" class="input" placeholder="Your Name" required>
         </div>
@@ -64,6 +64,10 @@
         <button (click)="addPost(post)" type="submit" class="button">Submit</button>
   
       </form>
+      <!--Not Logged In-->
+      <div *ngIf="!auth.isAuthenticated()">
+        Log in to submit your info on this class.
+      </div>
       <h1 class="display-4 text-left pt-5">Tips</h1>
       <h1 class="display-4 text-left pt-5">Professors</h1>
     </div>

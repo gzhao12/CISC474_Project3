@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Post } from '../post';
 import { Router } from '@angular/router';
-
+import { AuthService } from '../../auth/auth-service';
 
 
 
@@ -29,7 +29,7 @@ export class CISC474Component implements OnInit {
 
   post = new Post('', '', 474, null, 0, 0);
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router, public auth: AuthService) { }
 
   ngOnInit() {
     this.getRestItems();

@@ -12,8 +12,7 @@ export class AuthService {
     clientID: 'aHCL23CBAKQRNjV77pSxyF07PYBMcuIT',
     domain: 'jonjon007.auth0.com',
     responseType: 'token id_token',
-    redirectUri: 'http://localhost:4200/callback',
-    scope: 'openid'
+    redirectUri: 'http://localhost:4200/callback'
   });
 
   constructor(public router: Router) {}
@@ -45,12 +44,15 @@ export class AuthService {
   }
 
   public logout(): void {
+    // Go back to the home route after logging out
+    this.auth0.logout({
+      returnTo: 'http://localhost:4200/',
+      clientID: 'aHCL23CBAKQRNjV77pSxyF07PYBMcuIT' //Hard-coded
+    });
     // Remove tokens and expiry time from localStorage
     localStorage.removeItem('access_token');
     localStorage.removeItem('id_token');
     localStorage.removeItem('expires_at');
-    // Go back to the home route
-    this.router.navigate(['/']);
   }
 
   public isAuthenticated(): boolean {

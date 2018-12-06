@@ -17,8 +17,8 @@ const routes: Routes = [
   { path: 'courses/cisc181', component: CISC181Component},
   { path: 'courses/cisc220', component: CISC220Component},
   { path: 'courses/cisc474', component: CISC474Component },
-  { path: 'callback', component: CallBackComponent },
-  { path: '**', component: ErrorComponent },
+  { path: 'callback', component: CallBackComponent }//,
+  //{ path: '**', component: ErrorComponent },
 ];
 
 @NgModule({

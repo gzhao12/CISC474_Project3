@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-call-back-component',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CallBackComponent implements OnInit {
 
-  constructor() { }
+   //in your constructor
+   constructor(public router: Router){}
+
 
   ngOnInit() {
+    //navigation link.
+    this.router.navigate(['/']);
   }
 
 }
