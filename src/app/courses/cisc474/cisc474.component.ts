@@ -5,6 +5,7 @@ import { Post } from '../post';
 import { Router } from '@angular/router';
 import { DialogComponent } from '../../dialog-window/dialog/dialog.component';
 import { MatDialog, MatDialogConfig } from '@angular/material';
+import { AuthService } from '../../auth/auth.service';
 
 
 
@@ -31,7 +32,7 @@ export class CISC474Component implements OnInit {
 
   post = new Post('', '', 474, '', 0, 0);
 
-  constructor(private http: HttpClient, private router: Router, private dialog: MatDialog) { }
+  constructor(private http: HttpClient, private router: Router, private dialog: MatDialog, public auth: AuthService) { }
 
   ngOnInit() {
     this.getRestItems();

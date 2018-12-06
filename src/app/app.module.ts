@@ -24,9 +24,11 @@ import { DialogComponent } from './dialog-window/dialog/dialog.component';
 import { CardFancyComponent } from './card-fancy/card-fancy.component';
 import {MatNativeDateModule} from '@angular/material';
 import { MatCardModule } from '@angular/material/card';
+import { AuthService } from './auth/auth.service'
 
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { CallbackComponent } from './callback/callback.component';
 
 
 
@@ -48,6 +50,7 @@ import { ContactComponent } from './contact/contact.component';
     CardFancyComponent,
     AboutComponent,
     ContactComponent,
+    CallbackComponent,
 
   ],
   imports: [
@@ -68,7 +71,7 @@ import { ContactComponent } from './contact/contact.component';
     MDBBootstrapModule.forRoot(),
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

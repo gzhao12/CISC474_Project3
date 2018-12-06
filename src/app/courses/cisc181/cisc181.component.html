@@ -45,8 +45,8 @@
         </div>
         </ng-container>
       </div>
-  
-      <mat-accordion>
+      <!--Logged In-->
+      <mat-accordion *ngIf="auth.isAuthenticated()">
         <mat-expansion-panel>
           <mat-expansion-panel-header>
             <mat-panel-title>
@@ -72,6 +72,10 @@
          
         </mat-expansion-panel>
       </mat-accordion>
+       <!--Not Logged In-->
+      <div *ngIf="!auth.isAuthenticated()">
+        Log in to submit your info on this class.
+      </div>
       
       <h1 class="display-4 text-left pt-5">Tips</h1>
       <div class="wrapper">
@@ -93,8 +97,8 @@
           </div>
         </ng-container>
       </div>
-  
-      <mat-accordion>
+      <!--Logged In-->
+      <mat-accordion *ngIf="auth.isAuthenticated()">
         <mat-expansion-panel>
           <mat-expansion-panel-header>
             <mat-panel-title>
@@ -120,6 +124,10 @@
          
         </mat-expansion-panel>
       </mat-accordion>
+       <!--Not Logged In-->
+      <div *ngIf="!auth.isAuthenticated()">
+        Log in to submit your info on this class.
+      </div>
   
       <h1 class="display-4 text-left pt-5">Professors</h1>
     </div>

@@ -9,6 +9,7 @@ import { CISC108Component } from './courses/cisc108/cisc108.component';
 import { CISC181Component } from './courses/cisc181/cisc181.component';
 import { CISC220Component } from './courses/cisc220/cisc220.component';
 import { CISC474Component } from './courses/cisc474/cisc474.component';
+import { CallbackComponent } from './callback/callback.component';
 
 
 const routes: Routes = [
@@ -20,7 +21,8 @@ const routes: Routes = [
   { path: 'courses/cisc181', component: CISC181Component},
   { path: 'courses/cisc220', component: CISC220Component},
   { path: 'courses/cisc474', component: CISC474Component },
-  { path: '**', component: ErrorComponent },
+  { path: 'callback', component: CallbackComponent },
+  { path: '**', component: ErrorComponent }
 ];
 
 @NgModule({

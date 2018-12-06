@@ -44,8 +44,8 @@
         </div>
       </ng-container>
     </div>
-
-    <mat-accordion>
+    <!--Logged In-->
+    <mat-accordion *ngIf="auth.isAuthenticated()">
       <mat-expansion-panel>
         <mat-expansion-panel-header>
           <mat-panel-title>
@@ -71,6 +71,10 @@
        
       </mat-expansion-panel>
     </mat-accordion>
+     <!--Not Logged In-->
+     <div *ngIf="!auth.isAuthenticated()">
+        Log in to submit your info on this class.
+      </div>
     
 
     <h1 class="display-4 text-left pt-5">Tips</h1>
@@ -93,8 +97,8 @@
         </div>
       </ng-container>
     </div>
-
-    <mat-accordion>
+    <!--Logged In-->
+    <mat-accordion *ngIf="auth.isAuthenticated()">
       <mat-expansion-panel>
         <mat-expansion-panel-header>
           <mat-panel-title>
@@ -104,7 +108,7 @@
             
           </mat-panel-description>
         </mat-expansion-panel-header>
-    
+        
         <mat-form-field>
           <input matInput [(ngModel)]="post.author" name="author" placeholder="First name">
         </mat-form-field>
@@ -120,6 +124,10 @@
        
       </mat-expansion-panel>
     </mat-accordion>
+     <!--Not Logged In-->
+     <div *ngIf="!auth.isAuthenticated()">
+        Log in to submit your info on this class.
+      </div>
 
     <h1 class="display-4 text-left pt-5">Professors</h1>
   </div>

@@ -9,6 +9,12 @@
         <a class="nav-item nav-link active" routerLink="/">Home</a>
         <a class="nav-item nav-link" routerLink="/about">About</a>
         <a class="nav-item nav-link" routerLink="/contact">Contact</a>
+        <a class="nav-item nav-link"
+        *ngIf="!auth.isAuthenticated()"
+        (click)="auth.login()">Log In</a>
+        <a class="nav-item nav-link"
+        *ngIf="auth.isAuthenticated()"
+        (click)="auth.logout()">Log Out</a>
       </div>
     </div>
     <div class="navbar-expand ml-auto navbar-nav">
