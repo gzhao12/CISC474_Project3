@@ -13,26 +13,26 @@ import { AuthService } from '../../auth/auth-service';
   styleUrls: ['./cisc106.component.scss']
 })
 export class CISC106Component implements OnInit {
-
   CourseNumber = 'CISC 106';
   CourseName = 'General Computer Science for Engineers ';
   CourseDesc = 'Principles of computer science illustrated and applied \
-   through programming in a general-purpose language. Programming projects \
+  through programming in a general-purpose language. Programming projects \
    illustrate computational problems, styles, and issues that arise in engineering.';
 
   restItems: any;
   restItemsUrl: string;
   restItemsPost: string;
   counter = 0;
-
+  
   post = new Post('', '', 106, null, 0, 0);
-
+  
   constructor(private http: HttpClient, private router: Router, public auth: AuthService) { }
 
   ngOnInit() {
+    //alert(localStorage.getItem('id_token'));
     this.getRestItems();
   }
-
+  
   updateUpvotes(result) {
     result.up_votes ++;
     this.updatePost(result);
